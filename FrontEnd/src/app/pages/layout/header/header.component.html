@@ -97,21 +97,11 @@
                 }}</a>
               </li>
               <li routerLinkActive="current">
-                <a [routerLink]="currentLanguage + '/gallery'">{{
-                  "Projects" | translate
+                <a [routerLink]="currentLanguage + '/products'">{{
+                  "Products" | translate
                 }}</a>
               </li>
-              <li routerLinkActive="current">
-                <a [routerLink]="currentLanguage + '/services'">{{
-                  "Services" | translate
-                }}</a>
-              </li>
-              
-              <li routerLinkActive="current">
-                <a [routerLink]="currentLanguage + '/contact-us'">{{
-                  "Contact" | translate
-                }}</a>
-              </li>
+             
               <li>
                 <a
                   [routerLink]="
@@ -199,28 +189,12 @@
             <a
               class="mm-btn mm-listitem__btn mm-listitem__text"
               routerLinkActive="nav-mobile-active"
-              [routerLink]="currentLanguage + '/gallery'"
-              >{{ "Projects" | translate }}</a
+              [routerLink]="currentLanguage + '/products'"
+              >{{ "Products" | translate }}</a
             >
           </li>
 
-          <li class="dropdown mm-listitem">
-            <a
-              class="mm-btn mm-listitem__btn mm-listitem__text"
-              routerLinkActive="nav-mobile-active"
-              [routerLink]="currentLanguage + '/services'"
-              >{{ "Services" | translate }}</a
-            >
-          </li>
         
-          <li class="mm-listitem">
-            <a
-              routerLinkActive="nav-mobile-active"
-              [routerLink]="currentLanguage + '/contact-us'"
-              class="mm-listitem__text"
-              >{{ "Contact" | translate }}</a
-            >
-          </li>
           <li class="mm-listitem">
             <a
               [routerLink]="
