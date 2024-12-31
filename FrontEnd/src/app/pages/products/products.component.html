@@ -1,0 +1,80 @@
+<div class="card mt-4 p-5">
+    <p-table #dt1
+    [value]="products" 
+    [paginator]="true" 
+    [rows]="pageSize" 
+    [pageLinks]="3" 
+    [first]="first" 
+    [totalRecords]="totalCount"
+    [loading]="loading" 
+    [tableStyle]="{ 'min-width': '50rem' }"
+    (onPage)="handlePageEvent($event)" 
+    (onSort)="handleSortEvent($event)" 
+    [rowsPerPageOptions]="[10, 25, 50]"  >
+        <ng-template #caption>
+            <div class="d-flex">
+                <div class="flex  align-items-center">
+
+                    <p-iconfield iconPosition="left" class="ml-auto">
+                        <p-inputicon>
+                            <i class="pi pi-search"></i>
+                        </p-inputicon>
+                        <input pInputText type="text" [(ngModel)]="searchQuery" (input)="onSearch($event)"
+                            placeholder="Search keyword" />
+                    </p-iconfield>
+                    <p-button label="Clear" [outlined]="true" icon="pi pi-filter-slash"
+                        (click)="clearSearch()"></p-button>
+                    <p-button label="Add New Item" icon="pi pi-plus" (click)="addItem()"></p-button>
+                </div>
+
+            </div>
+
+        </ng-template>
+
+        <ng-template #header>
+            <tr>
+                <th pSortableColumn="id" style="width:20%">
+                    Id <p-sortIcon field="id" />
+                </th>
+                <th>Name</th>
+
+                <th>Description</th>
+                <th pSortableColumn="price" style="width:20%">
+                    Price <p-sortIcon field="price" />
+                </th>
+                <th pSortableColumn="createdDate" style="width:20%">
+                    CreatedDate <p-sortIcon field="createdDate" />
+                </th>
+                <th>Opertions</th>
+
+            </tr>
+        </ng-template>
+        <ng-template #body let-product>
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price}}</td>
+                <td>{{ product.createdDate}}</td>
+                <td>
+
+                    <a class="btn btn-sm btn-primary mx-2"
+                        [href]="baseService.currentLanguage + '/create/' + product.id">
+                        <i class="pi pi-pencil"></i> Edit
+                    </a>
+                    <button class="btn btn-sm btn-danger mx-2" (click)="deleteProduct(product.id)">
+                        <i class="pi pi-trash"></i> Delete
+                    </button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template #paginatorleft>
+            <p-button type="button" label="First" (click)="goToFirstPage()" icon="pi pi-angle-double-left" />
+        </ng-template>
+        <ng-template #paginatorright>
+            <p-button type="button" label="Last" (click)="goToLastPage()" icon="pi pi-angle-double-right" />
+        </ng-template>
+        
+    </p-table>
+   
+</div>

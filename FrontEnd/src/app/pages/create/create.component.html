@@ -1,0 +1,133 @@
+<!--Page Title-->
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+    
+  <div class="small-container">
+    @if(isLoading){
+    <app-loading></app-loading>
+    }@else{
+    <!-- Form box -->
+    <div class="form-box">
+      <div class="contact-form">
+        <form
+          [formGroup]="contactForm"
+          (keyup.enter)="onSubmit()"
+          (ngSubmit)="onSubmit()"
+          id="email-form"
+        >
+        <div class="row">
+            <div class="text-center font-weight-bold" style="font-size: 1.5rem;">
+              <ng-container *ngIf="id; else addProduct">
+                Edit Product
+              </ng-container>
+              <ng-template #addProduct>
+                Add New Product
+              </ng-template>            </div>            <div class="form-group col-lg-12">
+                <div class="response"></div>
+              </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input
+                          type="text"
+                          formControlName="name"
+                          class="form-control w-100"
+                          placeholder="{{ 'Full Name *'}}"
+                          [ngClass]="{
+                            'border-danger':
+                              contactForm.get('name')?.invalid &&
+                              contactForm.get('name')?.touched
+                          }"
+                        />
+                        <small
+                          *ngIf="
+                            contactForm.get('name')?.invalid &&
+                            contactForm.get('name')?.touched
+                          "
+                          class="text-danger"
+                        >
+                          {{
+                            "Name is required and should be less than 100 characters."
+                          }}
+                        </small>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input
+                          type="number"
+                          class="form-control w-100" style="height: 55px;"
+                          formControlName="price"
+                          placeholder="{{ 'Price*'}}"
+                          [ngClass]="{
+                            'border-danger':
+                              contactForm.get('price')?.invalid &&
+                              contactForm.get('price')?.touched
+                          }"
+                        />
+                        <small
+                          *ngIf="
+                            contactForm.get('price')?.invalid &&
+                            contactForm.get('price')?.touched
+                          "
+                          class="text-danger"
+                        >
+                          {{ "Price is required."}}
+                        </small>
+                      </div>
+                </div>
+           
+        </div>
+          <div class="row">
+            
+           
+
+            <div class="col-lg-12 col-md-12 mt-3 mt-lg-0">
+              <!-- Message -->
+              <div class="form-group h-100">
+                <textarea
+                  formControlName="description"
+                  class="message h-100"
+                  placeholder="{{ 'Description *'}}"
+                  [ngClass]="{
+                    'border-danger':
+                      contactForm.get('description')?.invalid &&
+                      contactForm.get('description')?.touched
+                  }"
+                ></textarea>
+                <small
+                  *ngIf="
+                    contactForm.get('description')?.invalid &&
+                    contactForm.get('description')?.touched
+                  "
+                  class="text-danger"
+                >
+                  {{ "Description is required."}}
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group col-lg-12 text-center pt-3">
+              <button
+                *ngIf="!isLoading"
+                class="theme-btn btn-style-one"
+                type="submit"
+                (click)="onSubmit()"
+              >
+              <span class="btn-title">{{ id ? "Update" : "Add" }}</span>
+
+                <span></span> <span></span> <span></span> <span></span> <span></span>
+              </button>
+              <button *ngIf="isLoading" class="py-2 theme-btn btn-style-one">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+<!--End Contact Section -->
+

@@ -1,0 +1,76 @@
+<div
+  class="d-flex align-items-center justify-content-center pagination"
+  *ngIf="PaginationMetaData"
+>
+  <!-- Previous Page Button -->
+  <a
+    class="prevPage"
+    [class.disabled]="!hasPreviousPage()"
+    (click)="hasPreviousPage() ? prevPage() : null"
+  >
+    <i class="fa fa-angle-left"></i>
+  </a>
+
+  <!-- First Page -->
+  <a (click)="onChangePage(1)">
+    <span [class.activeBox]="PaginationMetaData.CurrentPage === 1">
+      {{ (1).toLocaleString(currentLanguage === "ar" ? "ar-SA" : "en-US") }}
+    </span>
+  </a>
+
+  <!-- Ellipsis for pages before current -->
+  <span class="dots" *ngIf="PaginationMetaData.CurrentPage > 4">...</span>
+
+  <!-- Middle pages -->
+  <ng-container *ngFor="let page of Pages">
+    <ng-container
+      *ngIf="
+        page > 1 &&
+        page < PaginationMetaData.TotalPages &&
+        page >= PaginationMetaData.CurrentPage - 2 &&
+          page <= PaginationMetaData.CurrentPage + 2
+      "
+    >
+      <a
+        (click)="onChangePage(page)"
+        [class.activeBox]="PaginationMetaData.CurrentPage === page"
+      >
+        {{ page.toLocaleString(currentLanguage === "ar" ? "ar-SA" : "en-US") }}
+      </a>
+    </ng-container>
+  </ng-container>
+
+  <!-- Ellipsis for pages after current -->
+  <span
+    class="dots"
+    *ngIf="PaginationMetaData.CurrentPage < PaginationMetaData.TotalPages - 3"
+    >...</span
+  >
+
+  <!-- Last Page -->
+  <a
+    *ngIf="PaginationMetaData.TotalPages > 1"
+    (click)="onChangePage(PaginationMetaData.TotalPages)"
+  >
+    <span
+      [class.activeBox]="
+        PaginationMetaData.CurrentPage === PaginationMetaData.TotalPages
+      "
+    >
+      {{
+        PaginationMetaData.TotalPages.toLocaleString(
+          currentLanguage === "ar" ? "ar-SA" : "en-US"
+        )
+      }}
+    </span>
+  </a>
+
+  <!-- Next Page Button -->
+  <a
+    class="nextPage"
+    [class.disabled]="!hasNextPage()"
+    (click)="hasNextPage() ? nextPage() : null"
+  >
+    <i class="fa fa-angle-right"></i>
+  </a>
+</div>

@@ -1,0 +1,238 @@
+<!--Page Title-->
+<section
+  class="page-title"
+  style="background-image: url(/assets/images/2.jpg)"
+>
+  <div class="auto-container">
+    <div class="title-outer">
+      <h1>{{ "Contact Us" | translate }}</h1>
+      <ul class="page-breadcrumb">
+        <li>
+          <a href="index.html">{{ "Home" | translate }}</a>
+        </li>
+        <li>{{ "Contact Us" | translate }}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--End Page Title-->
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="small-container">
+    <div class="sec-title text-center">
+      <span class="sub-title">{{ "Contact Now" | translate }}</span>
+      <h2>{{ "Write us a Message !" | translate }}</h2>
+      <span class="divider"><svg viewBox="0 0 300.08 300.08"><path d="m293.26 184.14h-82.877l-12.692-76.138c-.546-3.287-3.396-5.701-6.718-5.701-.034 0-.061 0-.089 0-3.369.027-6.199 2.523-6.677 5.845l-12.507 87.602-14.874-148.69c-.355-3.43-3.205-6.056-6.643-6.138-.048 0-.096 0-.143 0-3.39 0-6.274 2.489-6.752 5.852l-19.621 137.368h-9.405l-12.221-42.782c-.866-3.028-3.812-5.149-6.8-4.944-3.13.109-5.777 2.332-6.431 5.395l-8.941 42.332h-73.049c-3.771 0-6.82 3.049-6.82 6.82 0 3.778 3.049 6.82 6.82 6.82h78.566c3.219 0 6.002-2.251 6.67-5.408l4.406-20.856 6.09 21.313c.839 2.939 3.526 4.951 6.568 4.951h20.46c3.396 0 6.274-2.489 6.752-5.845l12.508-87.596 14.874 148.683c.355 3.437 3.205 6.056 6.643 6.138h.143c3.39 0 6.274-2.489 6.752-5.845l14.227-99.599 6.397 38.362c.546 3.287 3.396 5.702 6.725 5.702h88.66c3.771 0 6.82-3.049 6.82-6.82-.001-3.772-3.05-6.821-6.821-6.821z"/></svg></span>
+    </div>
+
+    <!-- Contact box -->
+    <div class="contact-box">
+      <div class="row">
+        <div class="contact-info-block col-lg-4 col-md-6 col-sm-12">
+          <div class="inner">
+            <span class="icon flaticon-worldwide"></span>
+            <h4>
+              <strong>{{ "Address" | translate }}</strong>
+            </h4>
+            <p>{{
+              baseService.splitTextByLanguage(companyInfo?.address || "")
+            }}</p>
+          </div>
+        </div>
+
+        <div class="contact-info-block col-lg-4 col-md-6 col-sm-12">
+          <div class="inner">
+            <span class="icon flaticon-phone"></span>
+            <h4>
+              <strong>{{ "Phone" | translate }}</strong>
+            </h4>
+            <p>
+              <a href="#">{{ companyInfo?.contactMobile }}</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-info-block col-lg-4 col-md-6 col-sm-12">
+          <div class="inner">
+            <span class="icon flaticon-email"></span>
+            <h4>
+              <strong>{{ "Email" | translate }}</strong>
+            </h4>
+            <p>
+              <a [href]="'mailto:' + companyInfo?.contactEmail">{{
+                companyInfo?.contactEmail
+              }}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    @if(isLoading){
+    <app-loading></app-loading>
+    }@else{
+    <!-- Form box -->
+    <div class="form-box">
+      <div class="contact-form">
+        <form
+          [formGroup]="contactForm"
+          (keyup.enter)="onSubmit()"
+          (ngSubmit)="onSubmit()"
+          id="email-form"
+        >
+          <div class="row">
+            <div class="form-group col-lg-12">
+              <div class="response"></div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div>
+                <!-- Full Name -->
+                <div class="form-group">
+                  <input
+                    type="text"
+                    formControlName="name"
+                    class="username"
+                    placeholder="{{ 'Full Name *' | translate }}"
+                    [ngClass]="{
+                      'border-danger':
+                        contactForm.get('name')?.invalid &&
+                        contactForm.get('name')?.touched
+                    }"
+                  />
+                  <small
+                    *ngIf="
+                      contactForm.get('name')?.invalid &&
+                      contactForm.get('name')?.touched
+                    "
+                    class="text-danger"
+                  >
+                    {{
+                      "Name is required and should be less than 255 characters."
+                        | translate
+                    }}
+                  </small>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                  <input
+                    type="email"
+                    formControlName="email"
+                    class="email"
+                    placeholder="{{ 'Email Address *' | translate }}"
+                    [ngClass]="{
+                      'border-danger':
+                        contactForm.get('email')?.invalid &&
+                        contactForm.get('email')?.touched
+                    }"
+                  />
+                  <small
+                    *ngIf="
+                      contactForm.get('email')?.invalid &&
+                      contactForm.get('email')?.touched
+                    "
+                    class="text-danger"
+                  >
+                    {{ "A valid email is required." | translate }}
+                  </small>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                  <input
+                    type="text"
+                    formControlName="phoneNumber"
+                    class="username"
+                    placeholder="{{ 'Your Phone' | translate }}"
+                    [ngClass]="{
+                      'border-danger':
+                        contactForm.get('phoneNumber')?.invalid &&
+                        contactForm.get('phoneNumber')?.touched
+                    }"
+                  />
+                  <small
+                    *ngIf="
+                      contactForm.get('phoneNumber')?.invalid &&
+                      contactForm.get('phoneNumber')?.touched
+                    "
+                    class="text-danger"
+                  >
+                    {{ "Phone number is required." | translate }}
+                  </small>
+                </div>
+                <div class="form-group m-0">
+                  <input
+                    type="text"
+                    formControlName="subject"
+                    class="subject"
+                    placeholder="{{ 'Subject *' | translate }}"
+                    [ngClass]="{
+                      'border-danger':
+                        contactForm.get('subject')?.invalid &&
+                        contactForm.get('subject')?.touched
+                    }"
+                  />
+                  <small
+                    *ngIf="
+                      contactForm.get('subject')?.invalid &&
+                      contactForm.get('subject')?.touched
+                    "
+                    class="text-danger"
+                  >
+                    {{
+                      "Subject is required and should be less than 255 characters."
+                        | translate
+                    }}
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mt-3 mt-lg-0">
+              <!-- Message -->
+              <div class="form-group h-100">
+                <textarea
+                  formControlName="message"
+                  class="message h-100"
+                  placeholder="{{ 'Message *' | translate }}"
+                  [ngClass]="{
+                    'border-danger':
+                      contactForm.get('message')?.invalid &&
+                      contactForm.get('message')?.touched
+                  }"
+                ></textarea>
+                <small
+                  *ngIf="
+                    contactForm.get('message')?.invalid &&
+                    contactForm.get('message')?.touched
+                  "
+                  class="text-danger"
+                >
+                  {{ "Message is required." | translate }}
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group col-lg-12 text-center pt-3">
+              <button
+                *ngIf="!isLoading"
+                class="theme-btn btn-style-one"
+                type="submit"
+                (click)="onSubmit()"
+              >
+                <span class="btn-title">{{ "Send Message" | translate }}</span>
+                <span></span> <span></span> <span></span> <span></span> <span></span>
+              </button>
+              <button *ngIf="isLoading" class="py-2 theme-btn btn-style-one">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    }
+  </div>
+</section>
+<!--End Contact Section -->
+

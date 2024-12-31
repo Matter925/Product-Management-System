@@ -1,0 +1,45 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li
+      *ngFor="let breadcrumb of breadcrumbs; let last = last"
+      class="breadcrumb-item d-flex align-items-center"
+      [ngClass]="{ active: breadcrumb.last }"
+    >
+      <ng-container *ngIf="!breadcrumb.last; else lastBreadcrumb">
+        <a
+          role="button"
+          [routerLink]="'/'+baseSerive.currentLanguage+ breadcrumb.url"
+          aria-current="page"
+          >{{ breadcrumb.label | translate }}</a
+        >
+        <ng-container *ngIf="!last">
+          <span
+            class="separator mx-2"
+            style="
+              font-size: 18px;
+              font-weight: 400;
+              color: rgba(44, 20, 61, 1);
+            "
+          >
+            <svg
+              class="rotate"
+              width="10"
+              height="16"
+              viewBox="0 0 10 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.13452 7.65234L7.88452 0.9375C8.20093 0.585938 8.72827 0.585938 9.07983 0.9375C9.39624 1.25391 9.39624 1.78125 9.07983 2.09766L2.89233 8.25L9.04468 14.4375C9.39624 14.7539 9.39624 15.2812 9.04468 15.5977C8.72827 15.9492 8.20093 15.9492 7.88452 15.5977L1.13452 8.84766C0.782959 8.53125 0.782959 8.00391 1.13452 7.65234Z"
+                fill="#2C143D"
+              />
+            </svg>
+          </span>
+        </ng-container>
+      </ng-container>
+      <ng-template #lastBreadcrumb>
+        <span aria-current="page">{{ breadcrumb.label | translate }}</span>
+      </ng-template>
+    </li>
+  </ol>
+</nav>

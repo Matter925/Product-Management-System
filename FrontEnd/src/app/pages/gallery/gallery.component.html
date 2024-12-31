@@ -1,0 +1,58 @@
+<!--Page Title-->
+<section class="page-title" style="background-image: url(/assets/images/2.jpg);">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h1>{{ "Projects" | translate }}</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">{{ "Home" | translate }}</a></li>
+                <li>{{ "Projects" | translate }}</li>
+            </ul> 
+        </div>
+    </div>
+  </section>
+  <!--End Page Title-->
+
+  <section class="portfolio-section alternate">
+    <div class="auto-container">
+        <!--MixitUp Galery-->
+        <div class="mixitup-gallery">
+            @if(loading){
+                <app-loading></app-loading>
+                }@else{
+                    <div class="row">
+                        <!-- Portfolio Block -->
+                        <div *ngFor="let item of gallery" class="portfolio-block all mix detal-care dental col-lg-4 col-md-6 col-sm-12" style="display: inline-block;">
+                            <div class="image-box">
+                                <figure class="image"><img [src]="imageUrl + item?.image" alt=""></figure>
+                                <div class="overlay">
+                                    <a href="/assets/images/2.jpg" class="icon-box lightbox-image" data-fancybox="gallery"><span class="fa fa-expand"></span></a>
+                                    <div class="title-box">
+                                        <h5>{{baseService.splitTextByLanguage(item.title || "")}}</h5>
+                                        <div class="cat">
+                                            <a href="#">{{baseService.splitTextByLanguage(item.subTitle || "")}}</a>,
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                      
+                    </div>
+                }
+           
+        </div>
+
+        @if(paginationMetaData){
+            <div class="d-flex justify-content-center align-items-center">
+            <div class="row">
+              <app-paginator
+                (page)="handlePageEvent($event)"
+                [PaginationMetaData]="paginationMetaData"
+                [currentLanguage]="baseService.currentLanguage"
+              ></app-paginator>
+            </div>
+            </div>
+            }
+    </div>
+</section>

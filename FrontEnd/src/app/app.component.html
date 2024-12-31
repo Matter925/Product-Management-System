@@ -1,0 +1,9 @@
+<div class="page-wrapper" [class.rtl]="currentLanguage === 'ar'">
+  <div class="preloader"></div>
+  <app-header [currentLanguage]="currentLanguage"></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
+<div class="scroll-to-top scroll-to-target" (click)="scrollToTop()">
+  <span class="fa fa-angle-up"></span>
+</div>

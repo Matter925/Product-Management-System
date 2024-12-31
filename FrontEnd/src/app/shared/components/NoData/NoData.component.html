@@ -1,0 +1,34 @@
+<div
+  class="custom-container h-100 row justify-content-center align-items-center p-5"
+>
+  <div class="col-lg-8 col-md-10">
+    <div class="text-center custom-text-center">
+      <img
+        class="custom-image"
+        src="/assets/images/NoData.png"
+        alt="No Data Image"
+      />
+    </div>
+    <h2 class="custom-heading">{{ message }}</h2>
+    <p class="custom-description c-fs-12">{{ description }}</p>
+    <div
+      *ngIf(showButton)
+      class="row g-4 align-items-center justify-content-center"
+    >
+      <div class="col-lg-4 col-md-6">
+        <a
+          [routerLink]="'/' + BaseService.currentLanguage + button1Link"
+          class="w-100 btn WMbtn-Secondary01 custom-button rounded-3 py-3"
+          >{{ button1Label }}</a
+        >
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <a
+          [routerLink]="'/' + BaseService.currentLanguage + button2Link"
+          class="btn w-100 WMbtn-primary custom-button rounded-3 py-3"
+          >{{ button2Label }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

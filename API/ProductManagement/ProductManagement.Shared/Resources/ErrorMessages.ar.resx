@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AssignNurse" xml:space="preserve">
+    <value>من فضلظ قم بتعيين ممرض للحجز</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>كلمة المرور الجديدة و التأكيدية ليست متطابقتان</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على الأقل على 8 أحرف، حرف كبير وحرف صغير ورقم وحرف خاص واحد.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>من فضلك أدخل عنوان بريد إلكتروني صحيح</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>يجب أن يحتوي الاسم على حروف إنجليزية فقط بدوس مسافات</value>
+  </data>
+  <data name="InvalidRangeLabel" xml:space="preserve">
+    <value> يجب أن يكون أكبر من 0.</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>يجب أن يحتوي الاسم على حروف إنجليزية فقط بدوس مسافات</value>
+  </data>
+  <data name="Min1" xml:space="preserve">
+    <value>{0} يجب أن يحتوي على على الأقل عنصر واحد</value>
+  </data>
+  <data name="MinLength3" xml:space="preserve">
+    <value>يرجي ادخال 3 احرف علي الاقل</value>
+  </data>
+  <data name="MinList1" xml:space="preserve">
+    <value>من فضلك ادخل '{0}' واحدا على الاقل</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>من فضلك أدخل اسم صحيح</value>
+  </data>
+  <data name="NameAr" xml:space="preserve">
+    <value>يجب أن تحتوي الأحرف على حروف عربية فقط</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>يجب أن تحتوي الأحرف على حروف إنجليزية فقط</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>استخدم 8 أحرف أو أكثر مع مزيج من الحروف والأرقام والرموز.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على الأقل على 8 أحرف، حرف كبير وحرف صغير ورقم وحرف خاص واحد.</value>
+  </data>
+  <data name="PasswordCompare" xml:space="preserve">
+    <value>كلمة المرور الجديدة وتأكيد كلمة المرور غير متطابقين.</value>
+  </data>
+  <data name="Percentage" xml:space="preserve">
+    <value>يجب أن يكون النطاق بين 1 و 90.</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>من فضلك قم بادخال رقم جوال صحيح</value>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value>{0} يجب أن يكون أكبر من 0.</value>
+  </data>
+  <data name="Range&gt;0" xml:space="preserve">
+    <value>{0} يجب أن يكون أكبر من 0.</value>
+  </data>
+  <data name="Range_0-100" xml:space="preserve">
+    <value>من فضلك أدخل قيمة بين 0 و 100.</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>هذا الحقل مطلوب.</value>
+  </data>
+  <data name="RequiredLabel" xml:space="preserve">
+    <value>حقل '{0}' مطلوب.</value>
+  </data>
+  <data name="StringLength10" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 10 أحرف.</value>
+  </data>
+  <data name="StringLength100" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 100 أحرف.</value>
+  </data>
+  <data name="StringLength1000" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 1000 أحرف.</value>
+  </data>
+  <data name="StringLength20" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 20 أحرف.</value>
+  </data>
+  <data name="StringLength200" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 200 أحرف.</value>
+  </data>
+  <data name="StringLength250" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 250 أحرف.</value>
+  </data>
+  <data name="StringLength255" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 255 أحرف.</value>
+  </data>
+  <data name="StringLength36" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 36 أحرف.</value>
+  </data>
+  <data name="StringLength4000" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 4000 أحرف.</value>
+  </data>
+  <data name="StringLength450" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 450 أحرف.</value>
+  </data>
+  <data name="StringLength50" xml:space="preserve">
+    <value>الحد الأقصى للطول هو 50 أحرف.</value>
+  </data>
+  <data name="Tube" xml:space="preserve">
+    <value>أنبوب</value>
+  </data>
+  <data name="ValidCode" xml:space="preserve">
+    <value>من فضلك قم بادخال رمز صحيح</value>
+  </data>
+  <data name="ValidIdNumber" xml:space="preserve">
+    <value>من فضلك قم بادخال رقم هوية صحيح</value>
+  </data>
+  <data name="ValidNumber" xml:space="preserve">
+    <value>من فضلك أدخل رقماً صحيحاً لـ {0}.</value>
+  </data>
+</root>

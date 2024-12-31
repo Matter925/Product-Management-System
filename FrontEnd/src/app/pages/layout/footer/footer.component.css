@@ -1,0 +1,83 @@
+.heading {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.13px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.09px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(272.64deg, #663190 0.26%, #271436 94.08%);
+  padding-top: 72px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.footer .footer-links {
+  display: flex;
+  gap: 20px;
+}
+.footer .footer-text,
+.footer .footer-copyright {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #ffffff;
+}
+.footer .footer-copyright {
+  text-align: left;
+}
+.footer .footer-logo {
+  text-align: center;
+}
+.footer .footer-logo img {
+  width: 282.14px;
+  height: 76.53px;
+}
+.footer .footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .footer-icons svg {
+  margin: 0 10px;
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 12px;
+    margin: auto;
+  }
+  .footer .footer-copyright {
+    font-size: 11px;
+    line-height: 23px;
+  }
+  .footer .footer-links p {
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .footer .footer-icons {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .question {
+    padding-top: 20px;
+  }
+  .paragraph {
+    font-size: 16px;
+  }
+}
+a {
+  display: block;
+}/*# sourceMappingURL=footer.component.css.map */

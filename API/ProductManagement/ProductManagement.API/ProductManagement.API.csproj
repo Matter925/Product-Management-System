@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SonarQubeTestProject>True</SonarQubeTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Compile Remove="wwwroot\Upload\Category\**" />
+    <Compile Remove="wwwroot\Upload\Lab Results\**" />
+    <Compile Remove="wwwroot\Upload\Partner\**" />
+    <Compile Remove="wwwroot\Upload\Client\**" />
+    <Content Remove="Logs\**" />
+    <Content Remove="wwwroot\Upload\Category\**" />
+    <Content Remove="wwwroot\Upload\Lab Results\**" />
+    <Content Remove="wwwroot\Upload\Partner\**" />
+    <Content Remove="wwwroot\Upload\Client\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <EmbeddedResource Remove="wwwroot\Upload\Category\**" />
+    <EmbeddedResource Remove="wwwroot\Upload\Lab Results\**" />
+    <EmbeddedResource Remove="wwwroot\Upload\Partner\**" />
+    <EmbeddedResource Remove="wwwroot\Upload\Client\**" />
+    <EntityDeploy Remove="wwwroot\Upload\Category\**" />
+    <EntityDeploy Remove="wwwroot\Upload\Lab Results\**" />
+    <EntityDeploy Remove="wwwroot\Upload\Partner\**" />
+    <EntityDeploy Remove="wwwroot\Upload\Client\**" />
+    <None Remove="Logs\**" />
+    <None Remove="wwwroot\Upload\Category\**" />
+    <None Remove="wwwroot\Upload\Lab Results\**" />
+    <None Remove="wwwroot\Upload\Partner\**" />
+    <None Remove="wwwroot\Upload\Client\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="CsvHelper" Version="33.0.1" />
+    <PackageReference Include="EPPlus" Version="5.8.3" />
+    <PackageReference Include="Google.Apis.FirebaseCloudMessaging.v1" Version="1.68.0.3431" />
+    <PackageReference Include="Hangfire" Version="1.8.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+    <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.3.8" />
+    <PackageReference Include="MiniProfiler.EntityFrameworkCore" Version="4.3.8" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="6.6.1" />
+    <PackageReference Include="Serilog.UI" Version="2.6.0" />
+    <PackageReference Include="Serilog.UI.MsSqlServerProvider" Version="2.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.7" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="Twilio" Version="7.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductManagement.EFCore\ProductManagement.EFCore.csproj" />
+    <ProjectReference Include="..\ProductManagement.Services\ProductManagement.Services.csproj" />
+    <ProjectReference Include="..\ProductManagement.Shared\ProductManagement.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Upload\Clients\" />
+    <Folder Include="wwwroot\Upload\Complaints\" />
+    <Folder Include="wwwroot\Upload\BlogsEN\" />
+    <Folder Include="wwwroot\Upload\CrelioResults\" />
+    <Folder Include="wwwroot\Upload\Defaults\Packages\" />
+    <Folder Include="wwwroot\Upload\CrelioAllResults\" />
+    <Folder Include="wwwroot\Upload\BlogsAR\" />
+    <Folder Include="wwwroot\Upload\Genetic\" />
+    <Folder Include="wwwroot\Upload\DoctorsDepartments\" />
+    <Folder Include="wwwroot\Upload\Diagnostics\" />
+    <Folder Include="wwwroot\Upload\GymsGallery\1\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\Upload\Defaults\Classification.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+	
+	
+</Project>
+

@@ -1,0 +1,110 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination a {
+  font-family: Cairo;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.44px;
+  letter-spacing: -0.02em;
+  color: #2c143d;
+  padding: 0.5rem;
+}
+
+.nextPage {
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: #663190 !important;
+}
+
+.prevPage {
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: #663190 !important;
+}
+
+.prevPage.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.prevPage.disabled i {
+  color: #ccc;
+}
+
+.nextPage.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.nextPage.disabled i {
+  color: #ccc;
+}
+
+.activeBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #663190 -17.66%, rgba(164, 126, 194, 0.16) 48.32%);
+  width: 30px;
+  height: 30px;
+  color: var(--Primary-colors-Primary-01, #663190) !important;
+}
+
+.pagination {
+  gap: 16px;
+}
+
+.dots {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: #2c143d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotate the arrow for RTL mode */
+:dir(rtl) .nextPage {
+  transform: rotate(180deg);
+}
+
+:dir(rtl) .prevPage {
+  transform: rotate(-180deg);
+}
+
+@media (max-width: 768px) {
+  .pagination a {
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .nextPage,
+  .prevPage {
+    color: var(--black-white-colors-black, #2c143d);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0px;
+  }
+}
+.pagination a {
+  cursor: pointer;
+}
+
+.pagination .prevPage.disabled,
+.pagination .nextPage.disabled {
+  cursor: not-allowed;
+}/*# sourceMappingURL=paginator.component.css.map */

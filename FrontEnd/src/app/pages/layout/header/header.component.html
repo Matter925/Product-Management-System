@@ -1,0 +1,272 @@
+<!-- Main Header-->
+<header class="main-header header-style-one">
+
+
+  <!-- Header Lower -->
+  <div class="header-lower mt-3">
+    <div class="auto-container">
+      <!-- Main box -->
+      <div class="main-box">
+        <div class="logo-box">
+          <div class="logo">
+            <a [routerLink]="baseService.currentLanguage + '/home'"
+              >
+              <p>{{ "Product Management System" | translate }}</p>
+             </a>
+          </div>
+        </div>
+
+        <!--Nav Box-->
+        <div class="nav-outer">
+          <nav class="nav main-menu">
+            <ul class="navigation" id="navbar">
+              <li routerLinkActive="current">
+                <a [routerLink]="baseService.currentLanguage + '/home'">{{
+                  "Home" | translate
+                }}</a>      
+              </li>
+              <li routerLinkActive="current">
+                <a [routerLink]="baseService.currentLanguage + '/products'">{{
+                  "Products" | translate
+                }}</a>
+              </li>
+              <li>
+                <a
+                  [routerLink]="
+                    languageService.changeLanguage(
+                      baseService.currentLanguage === 'en' ? 'ar' : 'en'
+                    )
+                  "
+                >
+                  {{
+                    baseService.currentLanguage === "en" ? "العربية" : "English"
+                  }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- Main Menu End-->
+
+          <div class="outer-box">
+            <a
+            aria-label="Chat Now"
+            href="/"
+              target="_blank"
+              id="appointment-btn"
+              class="theme-btn btn-style-one"
+              ><span class="btn-title">{{
+                "Book an appointment" | translate
+              }}</span
+              ><span></span> <span></span> <span></span> <span></span>
+              <span></span
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sticky Header  -->
+  <div class="sticky-header">
+    <div class="auto-container">
+      <div class="main-box">
+        <div class="logo-box">
+          <div class="logo">
+            <a [routerLink]="baseService.currentLanguage + '/home'"
+              > @if(baseService.currentLanguage == "ar"){
+                <img
+                src="assets/images/logo-ar.png"
+                alt="Alroya Logo"
+                style="width: 175px"
+              />
+              }@else{
+                <img
+                src="assets/images/logo-en.png"
+                alt="Alroya Logo"
+                
+                style="width: 175px"
+              />
+              }</a>
+          </div>
+        </div>
+        <div class="nav-outer">
+          <nav class="nav main-menu">
+            <ul class="navigation" id="sticky-navbar">
+              <li routerLinkActive="current">
+                <a [routerLink]="currentLanguage + '/home'">{{
+                  "Home" | translate
+                }}</a>
+              </li>
+              <li routerLinkActive="current">
+                <a [routerLink]="currentLanguage + '/gallery'">{{
+                  "Projects" | translate
+                }}</a>
+              </li>
+              <li routerLinkActive="current">
+                <a [routerLink]="currentLanguage + '/services'">{{
+                  "Services" | translate
+                }}</a>
+              </li>
+              
+              <li routerLinkActive="current">
+                <a [routerLink]="currentLanguage + '/contact-us'">{{
+                  "Contact" | translate
+                }}</a>
+              </li>
+              <li>
+                <a
+                  [routerLink]="
+                    languageService.changeLanguage(
+                      baseService.currentLanguage === 'en' ? 'ar' : 'en'
+                    )
+                  "
+                >
+                  {{
+                    baseService.currentLanguage === "en" ? "العربية" : "English"
+                  }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Sticky Menu -->
+
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <div class="logo">
+      <a [routerLink]="baseService.currentLanguage + '/home'"
+        > @if(baseService.currentLanguage == "ar"){
+          <img
+          src="assets/images/logo-ar.png"
+          alt="Alroya Logo"
+          style="width: 175px"
+        />
+        }@else{
+          <img
+          src="assets/images/logo-en.png"
+          alt="Alroya Logo"
+          
+          style="width: 175px"
+        />
+        }</a>
+    </div>
+
+    <!--Nav Box-->
+    <div class="nav-outer clearfix">
+      <div class="outer-box">
+        <!-- Search Btn -->
+        <div class="search-box">
+          <button class="search-btn mobile-search-btn">
+            <i class="flaticon-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <a class="mobile-nav-toggler navbar-trigger"
+          ><span class="fa fa-bars"></span
+        ></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="nav-mobile" class="mm-menu mm-menu_offcanvas mm-menu_theme-dark">
+    <div class="mm-navbars_top">
+      <div class="mm-navbar">
+        <a
+          class="mm-btn mm-btn_prev mm-navbar__btn mm-hidden"
+          aria-hidden="true"
+        ></a
+        ><a class="mm-navbar__title"><span>{{ "Menu" | translate }}</span></a>
+      </div>
+    </div>
+    <div class="mm-panels">
+      <div id="navbar" class="mm-panel mm-panel_opened">
+        <div class="mm-navbar mm-navbar_sticky mm-hidden" aria-hidden="true">
+          <a class="mm-navbar__title"><span>{{ "Menu" | translate }}</span></a>
+        </div>
+        <ul class="navigation mm-listview">
+          <li class="current dropdown mm-listitem">
+            <a
+              class="mm-btn mm-listitem__btn mm-listitem__text"
+              routerLinkActive="nav-mobile-active"
+              [routerLink]="currentLanguage + '/home'"
+              >{{ "Home" | translate }}</a
+            >
+          </li>
+          <li class="dropdown mm-listitem">
+            <a
+              class="mm-btn mm-listitem__btn mm-listitem__text"
+              routerLinkActive="nav-mobile-active"
+              [routerLink]="currentLanguage + '/gallery'"
+              >{{ "Projects" | translate }}</a
+            >
+          </li>
+
+          <li class="dropdown mm-listitem">
+            <a
+              class="mm-btn mm-listitem__btn mm-listitem__text"
+              routerLinkActive="nav-mobile-active"
+              [routerLink]="currentLanguage + '/services'"
+              >{{ "Services" | translate }}</a
+            >
+          </li>
+        
+          <li class="mm-listitem">
+            <a
+              routerLinkActive="nav-mobile-active"
+              [routerLink]="currentLanguage + '/contact-us'"
+              class="mm-listitem__text"
+              >{{ "Contact" | translate }}</a
+            >
+          </li>
+          <li class="mm-listitem">
+            <a
+              [routerLink]="
+                languageService.changeLanguage(
+                  baseService.currentLanguage === 'en' ? 'ar' : 'en'
+                )
+              "
+              class="mm-listitem__text"
+              > {{ baseService.currentLanguage === "en" ? "العربية" : "English" }}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mm-navbars_bottom">
+      <div class="mm-navbar">
+        <a class="fab fa-facebook-f" href="#"></a
+        ><a class="fab fa-twitter" href="#"></a
+        ><a class="fab fa-linkedin-in" href="#"></a
+        ><a class="fab fa-instagram" href="#"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Search -->
+  <div class="search-popup">
+    <span class="search-back-drop"></span>
+    <button class="close-search"><span class="fa fa-times"></span></button>
+
+    <div class="search-inner">
+      <form method="post" action="blog-showcase.html">
+        <div class="form-group">
+          <input
+            type="search"
+            name="search-field"
+            value=""
+            placeholder="Search..."
+            required=""
+          />
+          <button type="submit">
+            <i class="flaticon-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- End Header Search -->
+</header>
+<!--End Main Header -->
